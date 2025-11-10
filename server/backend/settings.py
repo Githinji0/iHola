@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,8 @@ SECRET_KEY = "django-insecure-6qz50v1!17oav!spvtnsdwwp1(4q+a2r39msvqs_x9i^kp0@qm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
 
 
 # Application definition
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework_simplejwt.token_blacklist',
 
     # Third-party apps
     "rest_framework",
@@ -55,7 +58,14 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),       # short-lived
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),         # long-lived
+    "ROTATE_REFRESH_TOKENS": True,                       # new refresh token on use
+    "BLACKLIST_AFTER_ROTATION": True,                    # old refresh tokens invalid
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
