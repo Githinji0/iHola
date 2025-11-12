@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import  NavBar  from './components/NavBar.jsx'
+import Home from './pages/Home.jsx'
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path='/' element={<h2 className='text-center mt-4'>Welcome to iHola</h2>} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </Router>
     </>
