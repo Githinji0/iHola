@@ -1,8 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import React from 'react'
-import profileIcon from '../assets/profile.svg'
+
 import { FaBars } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import Home from '../pages/Home'
+import Motivation from '../pages/Motivation'
+import Flashcards from '../pages/Flashcards'
+import Quiz from '../pages/Quiz'
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
