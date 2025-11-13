@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { FaBookmark, FaFire,FaBookOpen,FaArrowsAltH,FaAngleUp,FaTrophy } from "react-icons/fa";
+import { FaBookmark, FaFire, FaBookOpen, FaArrowsAltH, FaAngleUp, FaTrophy } from "react-icons/fa";
 import cactiImage from "../assets/skull.png";
 import StreakGraph from "./StreakGraph";
-import ProgressBart from "./ProgressBart";
+import TodayProgress from "./ProgressBar";
+import HeroCard from "./HeroCard";
 
 const HeroComponent = () => {
     const exampleUser = {
@@ -11,6 +12,26 @@ const HeroComponent = () => {
         email: "johndoe@example.com",
         accuracy: 92,
     };
+    const exampleCardData = [
+        {
+            title: "Daily Challenge",
+            description: "Test your skills with daily quizzes and challenges.",
+            icon: <FaTrophy size={40} className="text-white" />,
+            linkText: "Take the Challenge",
+        },
+        {
+            title: "Take a Quiz",
+            description: "Challenge yourself with quizzes on various topics.",
+            icon: <FaBookOpen size={40} className="text-white" />,
+            linkText: "Start Quiz",
+        },
+        {
+            title: "Get inspired",
+            description: "Read success stories from our community.",
+            icon: <FaArrowsAltH size={40} className="text-white" />,
+            linkText: "View Quotes",
+        }
+    ]
 
     return (
         <div className="h-full flex flex-col gap-4 p-2 text-start">
@@ -66,20 +87,20 @@ const HeroComponent = () => {
 
                     {/* Stats Section */}
                     <div className="w-full grid grid-cols-2 shadow-3xl justify-between items-center mt-  gap-2">
-                        <div className="text-start  h-24 shadow-[0_4px_20px_rgba(67,170,139,0.7)]  place-content-center px-2">
+                        <div className="text-start  h-24 shadow-[0_4px_20px_rgba(67,170,139,0.4)]  place-content-center px-2">
                             <h2 className=" font-bold w-full flex justify-between">Words Learnt
                                 <FaBookOpen className="inline-block ml-1 text-[#f3722c]" size={20} />
                             </h2>
                             <p className="text-3xl font-bold text-[#43aa8b]">150</p>
                         </div>
-                        <div className="text-start shadow-[0_4px_20px_rgba(67,170,139,0.7)]    h-24 rounded-lg place-content-center px-2">
+                        <div className="text-start shadow-[0_4px_20px_rgba(67,170,139,0.4)]    h-24 rounded-lg place-content-center px-2">
                             <h2 className=" font-bold flex justify-between  w-full">Total XP
                                 <FaAngleUp className="inline-block ml-1 text-[#f3722c]" size={20} />
                             </h2>
                             <p className="text-3xl font-bold text-[#f9c74f]">2,340</p>
                         </div>
                     </div>
-                    <div className="w-full text-start shadow-[0_4px_20px_rgba(67,170,139,0.7)]    h-24 rounded-lg place-content-center px-2">
+                    <div className="w-full text-start shadow-[0_4px_20px_rgba(67,170,139,0.4)]    h-24 rounded-lg place-content-center px-2">
                         <h2 className="w-full flex justify-between font-bold">Quiz score
 
                             <FaTrophy className="inline-block ml-1 text-[#f3722c]" size={20} />
@@ -87,8 +108,23 @@ const HeroComponent = () => {
                         <h1 className="font-extrabold text-2xl text-[#f9c74f]">{exampleUser.accuracy} %</h1>
                         <p className="text-gray-800">Average score</p>
                     </div>
-                    <div className="w-full">
-                        <ProgressBart />
+                    <div className="w-full  text-start shadow-[0_4px_20px_rgba(67,170,139,0.4)] rounded-lg place-content-center h-24">
+                        <TodayProgress />
+                    </div>
+
+                    <div className="w-full grid-cols-1 lg:grid-cols-3 place-content-center gap-2">
+                        {
+                            exampleCardData.map((card, index) => (
+                                <HeroCard
+                                    key={index}
+                                    icon={card.icon}
+                                    word={card.title}
+                                    description={card.description}
+                                    linkText={card.linkText}
+                                />
+                            ))
+                        }
+
                     </div>
                 </div>
             </div>
