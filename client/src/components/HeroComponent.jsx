@@ -4,6 +4,7 @@ import cactiImage from "../assets/skull.png";
 import StreakGraph from "./StreakGraph";
 import TodayProgress from "./ProgressBar";
 import HeroCard from "./HeroCard";
+import { Link } from "react-router-dom";
 
 const HeroComponent = () => {
     const exampleUser = {
@@ -14,22 +15,25 @@ const HeroComponent = () => {
     };
     const exampleCardData = [
         {
-            title: "Daily Challenge",
-            description: "Test your skills with daily quizzes and challenges.",
+            title: "Daily Words Challenge",
+            description: "Explore new words every day to enhance your vocabulary.",
             icon: <FaTrophy size={40} className="text-white" />,
             linkText: "Take the Challenge",
+            link: "/flashcards"
         },
         {
             title: "Take a Quiz",
             description: "Challenge yourself with quizzes on various topics.",
             icon: <FaBookOpen size={40} className="text-white" />,
             linkText: "Start Quiz",
+            link: "/quiz"
         },
         {
             title: "Get inspired",
             description: "Read success stories from our community.",
             icon: <FaArrowsAltH size={40} className="text-white" />,
             linkText: "View Quotes",
+            link: "/motivation"
         }
     ]
 
@@ -121,6 +125,7 @@ const HeroComponent = () => {
                                     word={card.title}
                                     description={card.description}
                                     linkText={card.linkText}
+                                    link={card.link}
                                 />
                             ))
                         }

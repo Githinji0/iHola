@@ -16,7 +16,7 @@ const ProgressBar = ({ completed, total }) => {
     return (
         <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden shadow-inner">
             <div
-                className="h-full rounded-full bg-linear-to-r from-orange-500 to-teal-400 transition-all duration-1000 ease-out"
+                className="h-full rounded-full bg-linear-to-r from-orange-500 to-yellow-400 transition-all duration-1000 ease-out"
                 style={{ width: `${progress}%` }}
             ></div>
         </div>
