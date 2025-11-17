@@ -12,7 +12,7 @@ import Quiz from '../pages/Quiz'
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className='w-full bg-[#fff1e6] flex justify-between items-center  shadow-md m-2 rounded-sm'>
+    <nav className='w-full bg-[#fff1e6] flex justify-between items-center  shadow-md m-2 rounded-sm fixed top-0 z-10'>
       <h1 className='text-[#43aa8b] text-2xl font-bold p-4'>iHola</h1>
 
       <div className="lg:flex justify-around text-red-400 text-sm font-semibold gap-2 p-1  hidden ">

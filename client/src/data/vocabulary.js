@@ -1,0 +1,142 @@
+export const vocabulary = [
+  { spanish: "Hola", english: "Hello" },
+  { spanish: "Adiós", english: "Goodbye" },
+  { spanish: "Por favor", english: "Please" },
+  { spanish: "Gracias", english: "Thank you" },
+  { spanish: "Lo siento", english: "I am sorry" },
+  { spanish: "Sí", english: "Yes" },
+  { spanish: "No", english: "No" },
+  { spanish: "¿Cómo estás?", english: "How are you?" },
+  { spanish: "Bien", english: "Good" },
+  { spanish: "Mal", english: "Bad" },
+  { spanish: "¿Qué hora es?", english: "What time is it?" },
+  { spanish: "¿Dónde está el baño?", english: "Where is the bathroom?" },
+  { spanish: "Me llamo...", english: "My name is..." },
+  { spanish: "¿Cuánto cuesta?", english: "How much does it cost?" },
+  { spanish: "No entiendo", english: "I don't understand" },
+  { spanish: "¿Hablas inglés?", english: "Do you speak English?" },
+  { spanish: "Ayuda", english: "Help" },
+  { spanish: "Amigo", english: "Friend" },
+  { spanish: "Familia", english: "Family" },
+  { spanish: "Comida", english: "Food" },
+  { spanish: "Agua", english: "Water" },
+  { spanish: "Casa", english: "House" },
+  { spanish: "Escuela", english: "School" },
+  { spanish: "Trabajo", english: "Work" },
+  { spanish: "Feliz", english: "Happy" },
+  { spanish: "Triste", english: "Sad" },
+  { spanish: "Perro", english: "Dog" },
+  { spanish: "Gato", english: "Cat" },
+  { spanish: "Libro", english: "Book" },
+  { spanish: "Coche", english: "Car" },
+  { spanish: "Ciudad", english: "City" },
+  { spanish: "País", english: "Country" },
+  { spanish: "Música", english: "Music" },
+  { spanish: "Película", english: "Movie" },
+  { spanish: "Deporte", english: "Sport" },
+  { spanish: "Viaje", english: "Travel" },
+  { spanish: "Tiempo", english: "Weather" },
+  { spanish: "Dinero", english: "Money" },
+  { spanish: "Salud", english: "Health" },
+
+];
+export const dailyWords = [
+  {
+    id: 1,
+    spanish: "Hola",
+    english: "Hello",
+    pronunciation: "OH-lah",
+    example: "¡Hola! ¿Cómo estás?",
+    category: "Greetings",
+  },
+  {
+    id: 2,
+    spanish: "Gracias",
+    english: "Thank you",
+    pronunciation: "GRAH-see-ahs",
+    example: "Muchas gracias por tu ayuda.",
+    category: "Courtesy",
+  },
+  {
+    id: 3,
+    spanish: "Casa",
+    english: "House",
+    pronunciation: "KAH-sah",
+    example: "Mi casa es grande.",
+    category: "Places",
+  },
+  {
+    id: 4,
+    spanish: "Agua",
+    english: "Water",
+    pronunciation: "AH-gwah",
+    example: "Necesito beber agua.",
+    category: "Food & Drink",
+  },
+  {
+    id: 5,
+    spanish: "Amigo",
+    english: "Friend",
+    pronunciation: "ah-MEE-goh",
+    example: "Él es mi mejor amigo.",
+    category: "People",
+  },
+];
+
+export const quizQuestions = [
+  {
+    id: 1,
+    spanish: "Hola",
+    options: ["Goodbye", "Hello", "Please", "Thank you"],
+    correctAnswer: "Hello",
+  },
+  {
+    id: 2,
+    spanish: "Gracias",
+    options: ["Hello", "Goodbye", "Thank you", "Please"],
+    correctAnswer: "Thank you",
+  },
+  {
+    id: 3,
+    spanish: "Casa",
+    options: ["Car", "House", "School", "Store"],
+    correctAnswer: "House",
+  },
+  {
+    id: 4,
+    spanish: "Agua",
+    options: ["Fire", "Earth", "Water", "Air"],
+    correctAnswer: "Water",
+  },
+  {
+    id: 5,
+    spanish: "Amigo",
+    options: ["Enemy", "Friend", "Family", "Teacher"],
+    correctAnswer: "Friend",
+  },
+];
+
+export const motivationalQuotes = [
+  {
+    spanish:
+      "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
+    english: "Success is the sum of small efforts repeated day in and day out.",
+    author: "Robert Collier",
+  },
+  {
+    spanish: "Un idioma diferente es una visión diferente de la vida.",
+    english: "A different language is a different vision of life.",
+    author: "Federico Fellini",
+  },
+  {
+    spanish: "No cuentes los días, haz que los días cuenten.",
+    english: "Don't count the days, make the days count.",
+    author: "Muhammad Ali",
+  },
+  {
+    spanish: "La práctica hace al maestro.",
+    english: "Practice makes perfect.",
+    author: "Spanish Proverb",
+  },
+];
+

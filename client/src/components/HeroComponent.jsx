@@ -38,7 +38,7 @@ const HeroComponent = () => {
     ]
 
     return (
-        <div className="h-full flex flex-col gap-4 p-2 text-start">
+        <div className="h-full flex flex-col gap-4 p-2 text-start mt-20">
 
             <div className=" w-full flex items-center justify-between mb-1"> <div className="w-[50%]"> <h1 className="tracking-wide font-bold text-4xl text-[#111827]">!Hola, {exampleUser.name} </h1> <p className="text-lg text-[#43aa8b] mt-1 font-light tracking-normal">Welcome back. Continue your Spanish learning journey!</p> </div> <div className="w-[45%] "> <img src={cactiImage} alt="Cacti" className="w-full h-full mx-auto" /> </div> </div>
 
