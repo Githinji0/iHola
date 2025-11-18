@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import TodayProgress from '../components/ProgressBar';
 import { quizQuestions } from '../data/vocabulary';
 import CompleteQuizBox from '../components/CompleteQuizBox';
+import quizImg from '../assets/icons/quiz.svg'
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -17,55 +18,65 @@ const Quiz = () => {
   const [completeQuiz, setCompleteQuiz] = useState(false);
 
   const question = quizQuestions[currentQuestion];
-  const progress = ((currentQuestion) / quizQuestions.length) * 100;
+  console.log('Current Question:', question);
+  const progress = (currentQuestion / quizQuestions.length) * 100;
+
   const handleSelectAnswer = (answer) => {
     if (selectedAnswer) return; // Prevent changing answer
     setSelectedAnswer(answer);
-  }
-  const handleSubmit = () => {
+  };
+
+  const handleSubmitAnswer = () => {
     if (!selectedAnswer) {
       toast.error("Please select an answer before proceeding.");
       return;
     }
-  }
 
-  setShowResult(true);
+    // Show result box
+    setShowResult(true);
 
-  // Check if the selected answer is correct
-  if (selectedAnswer === question.correctAnswer) {
-    setScore(score + 1);
-  }
-  else {
-    toast.error(`The correct answer was: ${question.correctAnswer}`);
-  }
-
+    // Check correctness
+    if (selectedAnswer === question.correctAnswer) {
+      setScore((prev) => prev + 1);
+    } else {
+      toast.error(`The correct answer was: ${question.correctAnswer}`);
+    }
+  };
   const handleNextQuestion = () => {
     if (currentQuestion + 1 < quizQuestions.length) {
-      setCurrentQuestion(currentQuestion + 1);
+      setCurrentQuestion((prev) => prev + 1);
       setSelectedAnswer(null);
       setShowResult(false);
     } else {
       setCompleteQuiz(true);
     }
-  }
+  };
   const handleRestartQuiz = () => {
     setCurrentQuestion(0);
     setSelectedAnswer(null);
     setShowResult(false);
     setScore(0);
     setCompleteQuiz(false);
-  }
-
+  };
   if (completeQuiz) {
-    const percentageScore = (score / quizQuestions.length) * 100;
-  } else {
-    return (<CompleteQuizBox />)
+    return <CompleteQuizBox score={score} total={quizQuestions.length} onRestart={handleRestartQuiz} />;
   }
 
 
   return (
-    <div className="h-screen flex flex-col mt-20 gap-4 p-2 text-start">
-      <h2 className='text-center mt-4'>Quiz Page</h2>
+    <div className=" h-screen mt-20 bg-[radial-gradient(circle,rgba(255,0,128,0.1),rgba(255,0,128,0.2))] flex justify-center items-center flex-col gap-2">
+      <h1 className='font-bold tracking-wide text-3xl'>Welcome to quiz!</h1>
+      <img src={quizImg} alt="Quiz" className='contain h-10 w-10'/>
+  
+      <QuixCard
+        question={question}
+        selectedAnswer={selectedAnswer}
+        onSelectAnswer={handleSelectAnswer}
+        showResult={showResult}
+        onSubmitAnswer={handleSubmitAnswer}
+        onNextQuestion={handleNextQuestion}
+        score={score}
+      />
     </div>
   )
 }
