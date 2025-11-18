@@ -11,6 +11,7 @@ import CompleteQuizBox from '../components/CompleteQuizBox';
 import quizImg from '../assets/icons/quiz.svg'
 
 const Quiz = () => {
+  console.log('Quiz Questions:', quizQuestions);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
