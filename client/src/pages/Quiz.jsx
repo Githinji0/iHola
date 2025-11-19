@@ -66,7 +66,7 @@ const Quiz = () => {
 
 
   return (
-    <div className=" min-h-screen mt-20 bg-[radial-gradient(circle,rgba(255,0,128,0.1),#f9844a52)] flex justify-center items-center flex-col gap-2">
+    <div className=" min-h-screen mt-12 bg-[radial-gradient(circle,rgba(255,0,128,0.1),#f9844a52)] flex justify-center items-center flex-col gap-2">
       <h1 className='font-bold tracking-wide text-3xl'>Welcome to quiz!</h1>
   
       <QuixCard

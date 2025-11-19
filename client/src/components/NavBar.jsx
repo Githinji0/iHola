@@ -1,37 +1,45 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
-import React from 'react'
-
-import { FaBars } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import Home from '../pages/Home'
-import Motivation from '../pages/Motivation'
-import Flashcards from '../pages/Flashcards'
-import Quiz from '../pages/Quiz'
+import { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <nav className='w-full bg-[#fff1e6] flex justify-between items-center  shadow-md m-2 rounded-sm fixed top-0 z-10'>
-      <h1 className='text-[#43aa8b] text-2xl font-bold p-4'>iHola</h1>
+    <nav className="w-full bg-[#fff1e6] flex justify-between items-center shadow-md px-4 py-3 fixed top-0 z-10">
 
-      <div className="lg:flex justify-around text-red-400 text-sm font-semibold gap-2 p-1  hidden ">
-        <ul>Home</ul>
-        <ul>Motivation</ul>
-        <ul>Flashcards</ul>
-        <ul>Quiz</ul>
+      {/* Logo */}
+      <h1 className="text-[#43aa8b] text-2xl font-bold">iHola</h1>
 
-      </div>
-      <div className="lg:hidden" id
-        ="menu-button">
-       <button>
-        <FaBars size={30} className="text-[#43aa8b] m-4"/>
-       </button>
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex gap-6 text-red-400 text-sm font-semibold">
+        <Link to="/">Home</Link>
+        <Link to="/motivation">Motivation</Link>
+        <Link to="/flashcards">Flashcards</Link>
+        <Link to="/quiz">Quiz</Link>
       </div>
 
+      {/* Mobile Menu Button */}
+      <button
+        className="lg:hidden text-[#43aa8b]"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+      </button>
+
+      {/* Mobile Dropdown Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-[#fff1e6] shadow-md flex flex-col gap-4 p-4 text-red-400 font-semibold lg:hidden animate-fade">
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link to="/motivation" onClick={() => setIsMenuOpen(false)}>Motivation</Link>
+          <Link to="/flashcards" onClick={() => setIsMenuOpen(false)}>Flashcards</Link>
+          <Link to="/quiz" onClick={() => setIsMenuOpen(false)}>Quiz</Link>
+        </div>
+      )}
 
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
