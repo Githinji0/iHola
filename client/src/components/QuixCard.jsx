@@ -4,7 +4,6 @@ const QuixCard = ({ question, selectedAnswer, onSelectAnswer, showResult, onSubm
     const letters = ['A', 'B', 'C', 'D'];
     return (
         <div className="w-full p-4 flex flex-col gap-2 items-center">
-            {console.log('Question in QuixCard:', question)}
             <h3>Question {question.id} out of five</h3>
             <div className="w-full p-4 bg-white rounded-xl shadow-md flex flex-col gap-4">
                 <TodayProgress progress={20} />
@@ -26,7 +25,7 @@ const QuixCard = ({ question, selectedAnswer, onSelectAnswer, showResult, onSubm
                 }
 
             </div>
-            <button className="text-md p-2 bg-[#43aa8b] text-white rounded-lg hover:bg-amber-500 cursor-pointer">Submit Answer</button>
+            <button onClick={() => onSubmitAnswer} className="text-md p-2 bg-[#43aa8b] text-white rounded-lg hover:bg-amber-500 cursor-pointer">Submit Answer</button>
         </div>
     )
 }

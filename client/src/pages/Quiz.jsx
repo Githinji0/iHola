@@ -35,6 +35,7 @@ const Quiz = () => {
 
     // Show result box
     setShowResult(true);
+    console.log('Selected Answer:');
 
     // Check correctness
     if (selectedAnswer === question.correctAnswer) {
